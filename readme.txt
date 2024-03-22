@@ -1,2 +1,2 @@
-Username = username
+Username = user
 Password = password
