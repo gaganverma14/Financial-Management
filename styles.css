@@ -7,8 +7,7 @@ body {
     align-items: center;
     text-align: center;
     margin: 0 auto;
-/*     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('qw.jpg'); */
-    background-image: url('qw.jpg');
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("qw.jpg");
     background-blend-mode: multiply;
     background-attachment: fixed;
     background-size: cover;
@@ -99,17 +98,49 @@ button:hover {
 input[type="number"],
 input[type="text"] {
     border: 2px solid #ccc; 
-    border-radius: 5px; /* Add rounded corners */
-    padding: 8px; /* Add padding */
-    margin-bottom: 10px; /* Add spacing between input elements */
-    width: 100%; /* Set width to 100% */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    border-radius: 5px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 input[type="number"]:focus,
 input[type="text"]:focus {
-    outline: none; /* Remove outline on focus */
-    border-color: #45a049; /* Change border color on focus */
+    outline: none; 
+    border-color: #45a049;
+}
+
+table td {
+    text-align: right;
+    padding-right: 10px; 
+}
+
+table td::after {
+    content: ' $'; 
+}
+
+table td:not(:last-child)::after {
+    content: ''; 
+}
+
+#expenseTable {
+    margin: 0 auto; 
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    text-align: center;
+}
+
+#expenseTable td {
+    margin: 20px;
+    border-right: 1px solid #ccc; 
+}
+
+
+
+label{
+    margin-bottom: 1rem;
 }
 
 
