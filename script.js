@@ -168,3 +168,13 @@ function saveData() {
         amountInput.value = '';
     }
 }
+
+const budget = document.getElementById('budget');
+const budgetAmount = parseFloat(budget.innerText);
+
+if (budgetAmount < 0.5 * parseFloat(document.getElementById('income').innerText)) {
+    alert('The budget amount is now below 50%!');
+}
+
+
+
