@@ -45,3 +45,7 @@ main p {
     color: #666;
     line-height: 1.5;
 }
+
+#youtubeVideo iframe {
+    border-radius: 10px; /* Add a 10-pixel border radius */
+}
