@@ -1,12 +1,5 @@
 body {
-    font-family: "Public Sans", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+    font-family: "Bebas Neue";
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("qw.jpg");
     background-blend-mode: multiply;
     background-attachment: fixed;
@@ -16,14 +9,21 @@ body {
   
   
   .wrapper {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
     max-width: 800px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 25px;
     padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
 .bordered {
@@ -33,16 +33,23 @@ body {
     margin: 10px;
 }
 
-header, section, footer {
+header, section {
     padding: 20px;
     border-radius: 25px; 
     margin: 10px;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+header {
+    padding: 20px;
+    border-radius: 25px;
+    margin: 10px;
+    background-image: linear-gradient(to right, #56c6ce, #db5757); /* Add a gradient color */
+}
 nav ul {
     list-style-type: none;
     padding: 0;
+    font: 25px;
 }
 
 nav ul li {
@@ -74,11 +81,6 @@ button:hover {
     background-color: rgb(79, 204, 131); 
 }
 
-input {
-    border-radius: 5px;
-}
-
-
 button {
     background-color: #4CAF50; 
     color: white; 
@@ -98,7 +100,7 @@ button:hover {
 input[type="number"],
 input[type="text"] {
     border: 2px solid #ccc; 
-    border-radius: 5px; 
+    border-radius: 15px; 
     padding: 8px; 
     margin-bottom: 10px; 
     width: 100%;
@@ -140,7 +142,8 @@ table td:not(:last-child)::after {
 
 
 label{
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
+    font-size: 18px;
 }
 
 
