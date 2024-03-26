@@ -93,7 +93,7 @@ nav ul li:nth-child(4) a {
   background-color: #555;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1090px) {
   nav ul li {
     display: block;
     margin-top: 25px; 
