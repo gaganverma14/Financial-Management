@@ -17,7 +17,7 @@ function addExpense() {
     const descriptionCell = newRow.insertCell(0);
     const amountCell = newRow.insertCell(1);
     descriptionCell.innerText = expenseDescription;
-    amountCell.innerText = `$${expenseAmount.toFixed(2)}`;
+    amountCell.innerText = `₹${expenseAmount.toFixed(2)}`;
 
     // Update total expenses
     const totalExpensesElement = document.getElementById('totalExpenses');
@@ -31,8 +31,6 @@ function addExpense() {
     // Recalculate budget
     calculateBudget();
 }
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('goalAmount').addEventListener('keypress', function(event) {
@@ -48,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
           calculateBudget();
       }
   });
+
 });
 
 function addGoal() {
@@ -67,29 +66,28 @@ function addGoal() {
   // Check if the required amount for the goal is less than the goal amount
   const totalExpenses = parseFloat(document.getElementById('totalExpenses').innerText);
   const remainingBudget = parseFloat(document.getElementById('budgetResult').innerText.split('₹')[1]);
-  if (goalAmount < totalExpenses) {
-      alert("Total expenses is greater than Goal amount!");
-  } else if (goalAmount < remainingBudget) {
-      alert("Total expenses is greater than Goal amount!");
-  }
 }
+
 
 function calculateBudget() {
-  const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
-  const totalExpenses = parseFloat(document.getElementById('totalExpenses').innerText);
-  const remainingBudget = monthlyIncome - totalExpenses;
-  const budgetResult = document.getElementById('budgetResult');
-  budgetResult.innerText = `Remaining Budget: ₹${remainingBudget.toFixed(2)}`;
+    const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
+    const totalExpenses = parseFloat(document.getElementById('totalExpenses').innerText);
+    const remainingBudget = monthlyIncome - totalExpenses;
+    
+    // Calculate total goal amount
+    let totalGoalAmount = 0;
+    const goalAmounts = document.querySelectorAll('#goalList li');
+    goalAmounts.forEach(goal => {
+        const goalAmount = parseFloat(goal.innerText.split(': ₹')[1]);
+        totalGoalAmount += goalAmount;
+    });
 
-  // Check if the remaining budget is near the goal amount
-  const goalAmounts = document.querySelectorAll('#goalList li');
-  goalAmounts.forEach(goal => {
-      const goalAmount = parseFloat(goal.innerText.split(': ₹')[1]);
-      if (remainingBudget < goalAmount) {
-          alert("Remaining budget is less than goal amount!");
-      }
-  });
+    const budgetResult = document.getElementById('budgetResult');
+    const goalResult = document.getElementById('goalResult');
+    budgetResult.innerText = `Remaining Budget: ₹${remainingBudget.toFixed(2)}`;
+    goalResult.innerText = `Total Goal Amount: ₹${totalGoalAmount.toFixed(2)}`;
 }
+
 
 
 // Get the form and submit button
@@ -117,24 +115,6 @@ function saveInput() {
     localStorage.setItem('inputValue', inputValue);
 }
 
-
-// Get the description and amount input elements
-const descriptionInput = document.getElementById('descriptionInput');
-const amountInput = document.getElementById('amountInput');
-
-// Add an input event listener to the description input element
-descriptionInput.addEventListener('input', function() {
-    const descriptionValue = descriptionInput.value.replace(/\.+$/, '');
-
-    descriptionInput.value = descriptionValue;
-});
-
-// Add an input event listener to the amount input element
-amountInput.addEventListener('input', function() {
-    const amountValue = amountInput.value.replace(/\.+$/, '');
-
-    amountInput.value = amountValue;
-});
 
 // Add a keydown event listener to the document
 document.addEventListener('keydown', function(event) {
