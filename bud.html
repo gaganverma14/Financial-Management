@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Management</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="image/x-icon" href="gfm.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Management for Students</title>
+  <link rel="stylesheet" href="new.css">
+  <link rel="shortcut icon" type="image/x-icon" href="gfm.png" />
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>FINANCIAL <BR> MANAGEMENT </h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#goals">Savings</a></li>
-                <li><a href="#budget">Budget</a></li>
-                <li><a href="#expenses">Expenses</a></li>
-                <li><a href="financial.html">Financial Education</a></li>
-            </ul>
-        </nav>
-        <section id="goals" class="bordered">
-            <h2>Savings Target</h2>
-            <div id="goalSetting">
-                <label for="goalDescription">Saving for:</label>
-                <input type="text" id="goalDescription">
-                <label for="goalAmount">Goal Amount:</label>
-                <input type="number" id="goalAmount">
-                <button onclick="addGoal()">Add Goal</button>
-                <ul id="goalList"></ul>
-            </div>
-        </section>
+
+  <div class="wrapper">
+    <header>
+      <h1>FINANCIAL<br>MANAGEMENT</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#goals" class="nav-button">Savings Goals</a></li>
+        <li><a href="#budget" class="nav-button">Budgeting</a></li>
+        <li><a href="#expenses" class="nav-button">Expense Tracking</a></li>
+        <li><a href="financial.html" class="nav-button">Financial Education</a></li>
+      </ul>
+    </nav>
+    
+
+    <section id="goals" class="bordered">
+      <h2>Savings Target</h2>
+      <div id="goalSetting">
+        <label for="goalDescription">Saving for:</label>
+        <input type="text" id="goalDescription" placeholder="Enter Goal Name">
+        <label for="goalAmount">Goal Amount:</label>
+        <input type="number" id="goalAmount" placeholder="₹0.00">
+        <button onclick="addGoal()">Add Goal</button>
+        <ul id="goalList"></ul>
+      </div>
+    </section>
 
 
+    <section id="budget" class="bordered">
+      <h2>Budgeting</h2>
+      <div id="budgetTools">
+        <label for="monthlyIncome">Monthly Income:</label>
+        <input type="number" id="monthlyIncome" placeholder="₹0.00">
+        <button onclick="calculateBudget()">Calculate Budget</button>
+        <div id="budgetResult"></div>
+      </div>
+    </section>
 
-        <section id="budget" class="bordered">
-            <h2>Budgeting</h2>
-            <div id="budgetTools">
-                <label for="monthlyIncome">Monthly Income:</label>
-                <input type="number" id="monthlyIncome">
-                <button onclick="calculateBudget()">Calculate Budget</button>
-                <div id="budgetResult"></div>
-            </div>
-        </section>
-        <section id="expenses" class="bordered">
-            <h2>Expense Monitoring</h2>
-            <div id="expenseTracker">
-                <label for="expenseDescription">Expense Description:</label>
-                <input type="text" id="expenseDescription" />
-                <label for="expenseAmount">Amount:</label>
-                <input type="number" id="expenseAmount" />
-                <button class="add-button" onclick="addExpense()">Add Expenses</button>
-                <table id="expenseTable">
-                  <thead>
-                    <tr>
-                      <th>Description</th>
-                      <th>Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody id="expenseList"></tbody>
-                </table>
-                <p>Total Expenses: ₹<span id="totalExpenses">0</span></p>
-              </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2024 Financial Management for Students</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+    <section id="expenses" class="bordered">
+      <h2>Expense Monitoring</h2>
+      <div id="expenseTracker">
+        <label for="expenseDescription">Expense Description:</label>
+        <input type="text" id="expenseDescription" placeholder="Enter Expense">
+        <label for="expenseAmount">Amount:</label>
+        <input type="number" id="expenseAmount" placeholder="₹0.00">
+        <button class="add-button" onclick="addExpense()">Add Expenses</button>
+        <table id="expenseTable">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="expenseList"></tbody>
+        </table>
+        <p>Total Expenses: ₹<span id="totalExpenses">0</span></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Financial Management for Students</p>
+    </footer>
+  </div>
+
+  <script src="new.js"></script>
 </body>
 </html>
